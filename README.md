@@ -1,2 +1,2 @@
 # C - Simple Shell Project
-# By Ayomide and Tolulope
+By Ayomide and Tolulope
