@@ -1,11 +1,12 @@
 #include "main.h"
 /**
- * tokenization - function that splits user's command strings
+ * tokenization - split user's command strings
  * @take_user_input: pointer to user_input
  * @argv: array of pointer to strings
  * @fd_check: size of input read in bytes
  * Return: array of pointer to strings
  */
+
 char **tokenization(char *take_user_input, char **argv, ssize_t fd_check)
 {
 	char *user_input_copy, *parse_token;
@@ -13,7 +14,7 @@ char **tokenization(char *take_user_input, char **argv, ssize_t fd_check)
 	int token_count = 0, num = 0;
 	int token_length;
 
-	delimiter = "\n";
+	delimiter = " \n";
 
 	user_input_copy = malloc(sizeof(char) * (fd_check + 2));
 	if (user_input_copy == NULL)
@@ -28,7 +29,7 @@ char **tokenization(char *take_user_input, char **argv, ssize_t fd_check)
 	{
 		token_count++;
 		free(parse_token);
-		parse_token = strtok(NULL, delimiter);
+		parse_token = _strtok(NULL, delimiter);
 	}
 	token_count++;
 
@@ -47,4 +48,5 @@ char **tokenization(char *take_user_input, char **argv, ssize_t fd_check)
 	argv[num] = NULL;
 	free(user_input_copy);
 	return (argv);
+
 }

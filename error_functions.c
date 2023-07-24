@@ -16,7 +16,7 @@ int _errputs(char *str)
 	}
 	for (a = 0; str[a]; a++)
 	{
-		write(2, &str[a], 1)
+		write(2, &str[a], 1);
 	}
 
 	return (a);

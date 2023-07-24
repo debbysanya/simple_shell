@@ -12,7 +12,7 @@ int main(int ac, char **argv)
 	data_shell shell_data;
 	int i, execution_status = 0;
 
-	shell_data_environ = environ;
+	shell_data._environ = environ;
 
 	(void)ac;
 	(void)argv;

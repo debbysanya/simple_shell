@@ -23,8 +23,8 @@ void exit_shell(char **receive_argv, int execution_status)
 		}
 		else if (a == 2)
 		{
-			arg = atoi(receive_argv[1]);
-			if (argv < 0)
+			arg = _atoi(receive_argv[1]);
+			if (arg < 0)
 			{
 				print_error(receive_argv, "illegal number:");
 				_errputs(receive_argv[1]);
@@ -33,9 +33,10 @@ void exit_shell(char **receive_argv, int execution_status)
 			else
 			{
 				free_array(receive_argv);
-				free(cmd);
+				free(cmds);
 				exit(arg);
 			}
+		}
 			else
 				write(STDERR_FILENO, error_msg, strlen(error_msg));
 	}
