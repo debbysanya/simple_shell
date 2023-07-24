@@ -13,7 +13,6 @@ int main(int ac, char **argv)
 	int i, execution_status = 0;
 
 	shell_data._environ = environ;
-
 	(void)ac;
 	(void)argv;
 
@@ -22,7 +21,6 @@ int main(int ac, char **argv)
 		user_input = NULL, fd_check = 0;
 		user_input = prompt(&fd_check);
 		receive_argv = tokenization(user_input, receive_argv, fd_check);
-
 		if (receive_argv[0] == NULL)
 			continue;
 		if (_strcmp(receive_argv[0], "env") == 0)
@@ -40,7 +38,6 @@ int main(int ac, char **argv)
 			continue;
 		}
 		i = handle_env_commands(receive_argv);
-
 		if (i != 0)
 		{
 			free(user_input);
@@ -48,7 +45,6 @@ int main(int ac, char **argv)
 			continue;
 		}
 		execution_status = execute_command(receive_argv);
-
 		if (execution_status == 1)
 			print_error(receive_argv, "not found\n");
 		free(user_input);

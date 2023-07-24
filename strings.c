@@ -65,10 +65,10 @@ int _strcspn(char *s, char *charset)
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (_strchr(charset, s[i]) != NULL)
-			{
-				break;
-			}
-			count++;
+		{
+			break;
+		}
+		count++;
 	}
 	return (count);
 }
@@ -86,9 +86,9 @@ int _strcmp(char *s, char *c)
 	for (i = 0; s[i] != '\0' && c[i] != '\0'; i++)
 	{
 		if (s[i] != c[i])
-			{
-				return (s[i] - c[i]);
-			}
+		{
+			return (s[i] - c[i]);
+		}
 	}
 	return (s[i] - c[i]);
 }

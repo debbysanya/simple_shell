@@ -11,11 +11,10 @@ char *prompt(ssize_t *fd_check)
 	char *user_input = NULL;
 
 	if (isatty(STDIN_FILENO))
-    {
-        write(STDOUT_FILENO, prompt_display, 8);
-    }
-
-    user_input = _getline();
+	{
+		write(STDOUT_FILENO, prompt_display, 8);
+	}
+	user_input = _getline();
 	if (user_input == NULL)
 	{
 		if (isatty(STDIN_FILENO))
