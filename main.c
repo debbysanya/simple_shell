@@ -1,20 +1,14 @@
 #include "main.h"
 /**
- * main - shell clone function
- * @ac: argument count
- * @argv: array of pointer to strings
- * Return: return 1 or 0
+ * shell_loop - Main loop of the shell clone
+ * @shell_data: Structure containing shell data
+ * Return: return 0
  */
-int main(int ac, char **argv)
+int shell_loop(data_shell *shell_data)
 {
 	char *user_input, **receive_argv;
 	ssize_t fd_check;
-	data_shell shell_data;
 	int i, execution_status = 0;
-
-	shell_data._environ = environ;
-	(void)ac;
-	(void)argv;
 
 	while (1 == 1)
 	{
@@ -26,7 +20,7 @@ int main(int ac, char **argv)
 		if (_strcmp(receive_argv[0], "env") == 0)
 		{
 			free(user_input);
-			_env(&shell_data);
+			_env(shell_data);
 			free_array(receive_argv);
 			continue;
 		}
@@ -50,5 +44,24 @@ int main(int ac, char **argv)
 		free(user_input);
 		free_array(receive_argv);
 	}
+	return (0);
+}
+/**
+ * main - Entry point of the shell program
+ * @ac: Argument count
+ * @argv: Array of pointers to strings
+ * Return: Return 1 or 0
+ */
+int main(int ac, char **argv)
+{
+	data_shell shell_data;
+
+	shell_data._environ = environ;
+
+	(void)ac;
+	(void)argv;
+
+	shell_loop(&shell_data);
+
 	return (0);
 }

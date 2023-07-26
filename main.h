@@ -57,9 +57,9 @@ char **tokenization(char *take_user_input, char **argv, ssize_t fd_check);
 
 char *accept_user_input(void);
 
-int main(int ac, char **argv);
 void (*get_command(char *cmd))(void);
-
+int main(int ac, char **argv);
+int shell_loop(data_shell *shell_data);
 /* strings related */
 int s_len(char *string);
 void s_copy(char *to, char *from);
