@@ -10,9 +10,10 @@ int shell_loop(data_shell *shell_data)
 	ssize_t fd_check;
 	int i, execution_status = 0;
 
-	while (1 == 1)
+	while (1)
 	{
-		user_input = NULL, fd_check = 0;
+		user_input = NULL;
+		fd_check = 0;
 		user_input = prompt(&fd_check);
 		receive_argv = tokenization(user_input, receive_argv, fd_check);
 		if (receive_argv[0] == NULL)
@@ -46,6 +47,7 @@ int shell_loop(data_shell *shell_data)
 	}
 	return (0);
 }
+
 /**
  * main - Entry point of the shell program
  * @ac: Argument count
