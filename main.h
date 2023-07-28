@@ -32,11 +32,11 @@ int shell_unsetenv(char **args);
 int handle_env_commands(char **args);
 
 /**
-* struct data_shell - Structure representing shell data
-*
-* @_environ: Pointer to an array of strings
-* @status: Integer representing the status of the shell
-*/
+ * struct data_shell - Structure representing shell data
+ *
+ * @_environ: Pointer to an array of strings
+ * @status: Integer representing the status of the shell
+ */
 typedef struct data_shell
 {
 	char **_environ;
@@ -60,7 +60,6 @@ char *accept_user_input(void);
 void (*get_command(char *cmd))(void);
 int main(int ac, char **argv);
 int shell_loop(data_shell *shell_data);
-int handle_built_in_commands(char **receive_argv, data_shell *shell_data);
 /* strings related */
 int s_len(char *string);
 void s_copy(char *to, char *from);
