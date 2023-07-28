@@ -60,6 +60,7 @@ char *accept_user_input(void);
 void (*get_command(char *cmd))(void);
 int main(int ac, char **argv);
 int shell_loop(data_shell *shell_data);
+int handle_built_in_commands(char **receive_argv, data_shell *shell_data);
 /* strings related */
 int s_len(char *string);
 void s_copy(char *to, char *from);
