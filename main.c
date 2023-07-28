@@ -30,7 +30,7 @@ int shell_loop(data_shell *shell_data)
 {
 	char *user_input, **receive_argv;
 	ssize_t fd_check;
-	int i ;
+	int i;
 
 	while (1)
 	{
