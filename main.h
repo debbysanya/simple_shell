@@ -32,15 +32,15 @@ int shell_unsetenv(char **args);
 int handle_env_commands(char **args);
 
 /**
- * struct data_shell - Structure representing shell data
- *
- * @_environ: Pointer to an array of strings
- * @status: Integer representing the status of the shell
- */
+* struct data_shell - Structure representing shell data
+*
+* @_environ: Pointer to an array of strings
+* @status: Integer representing the status of the shell
+*/
 typedef struct data_shell
 {
-        char **_environ;
-        int status;
+	char **_environ;
+	int status;
 } data_shell;
 /*void execute_shell(void *datash, char **receive_argv);*/
 int _env(data_shell *shell_data);
@@ -89,4 +89,3 @@ void _print(char *str);
 int write_char(char c);
 
 #endif
-
